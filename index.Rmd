@@ -1,0 +1,20 @@
+---
+title: "Analysis of VAST challenge 2"
+site: distill::distill_website
+listing: posts
+---
+# Table of Contents
+1. [Introduction](#Introduction)
+2. [literature review](#literature review)
+3. [Data preperation](#Data preperation)
+4. [Questions](#Questions)
+5. [Solutions](# Solutions)
+6. []()
+
+# Introduction
+
+# literature review
+
+# Data preperation
+
+## Installing and lauching R packages

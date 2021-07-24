@@ -1,0 +1,12 @@
+name: "VASTMC2"
+title: "Analysis of VAST challenge 2"
+description: |
+  Analysis of VAST challenge 2
+output_dir: "_site"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+output: distill::distill_article
