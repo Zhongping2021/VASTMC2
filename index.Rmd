@@ -1,7 +1,11 @@
 ---
-title: "Analysis of VAST challenge 2"
-site: distill::distill_website
-listing: posts
+title: "VAST Challege MC2 "
+description: | 
+  This is individual assignment for ISS608 Visual Analytics and applications based on VAST MC2
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2
 ---
 
 ```{r setup,include=FALSE}
@@ -14,14 +18,6 @@ knitr::opts_chunk$set(
 	warning = FALSE
 )
 ```
-
-# Table of Contents
-1. [Introduction](#Introduction)
-2. [literature review](#literature review)
-3. [Data preperation](#Data preperation)
-4. [Analysis and answers](#Analysis and answers)
-5. [Conclusion](#Conclusion)
-
 
 # Introduction
 In the roughly twenty years that Tethys-based GAStech has been operating a natural gas production site in the island country of Kronos, it has produced remarkable profits and developed strong relationships with the government of Kronos. However, GAStech has not been as successful in demonstrating environmental stewardship. 
@@ -471,12 +467,11 @@ So, in order to find out the exact location of each car at specific datetime. We
 
 Here is the [link  ](https://zhongping.shinyapps.io/MC2map/) to R shiny app.
 
-<iframe height="800" width="100%" frameborder="no" src="https://zhongping.shinyapps.io/MC2map/"> </iframe>
+![](data/shiny.gif)
 
- 
 After checking track each day, we find that the gps system of these 2 car seems broken. For car 9, the gps data have a lot missing leading the noncontinuous track. For car 28, the gps data have a lot bias leading the track unstable.
 
-### Which ccnumber link to which loyaltynumber
+## Which ccnumber link to which loyaltynumber
 
 From the experice, we can infer that if one employee consume at a shop and use his loyalty card for credit, then the transaction record in both card should share the same location, time and price. With this hypothesis, we can find the relationship between ccdata and loyaltydata. 
 
@@ -530,15 +525,9 @@ bip_railway(web[["1"]], label=T)+
   ggtitle("Abnormal mapping between ccnum and loyaltydata")+
   coord_flip()
 ```
-Normal link:
 
-```{r}
-relation_normal<-relation %>%
-  filter (!(higher %in% relation1$higher)) %>%
-  filter (!(lower %in% relation2$lower))
-```
 
-### Mapping carid and ccnum
+## Mapping carid and ccnum
 
 Now we have the transaction history of each employee and the track history of each car. So if any employee consumes at a certain store, for example, he consumes at Brew've Been Served at Jan 6th 13pm, the transaction history will record the time and store name while the gps history will also record time and gps(which inferred the store name). So we can find one data in ccdata records: cc card 1234 consumes at 
 Brew've Been Served at Jan 6th 13pm. Also we can find one data in gps records: car 4 stops at Brew've Been Served at Jan 6th 13pm. Then we know car4's owner Ingrid own car 1234.
@@ -550,7 +539,7 @@ mapping <- read_csv("data/mapping.csv")
 
 ```
 
-### Infornal relationship between employees
+## Infornal relationship between employees
 
 After analyzing the daily track of employees, we find some informal relationship (use car id refer to employee): 
 1. ID14, 18 live together.  
