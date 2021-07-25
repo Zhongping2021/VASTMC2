@@ -533,11 +533,17 @@ Now we have the transaction history of each employee and the track history of ea
 Brew've Been Served at Jan 6th 13pm. Also we can find one data in gps records: car 4 stops at Brew've Been Served at Jan 6th 13pm. Then we know car4's owner Ingrid own car 1234.
 
 With the help of  [Rshiny app  ](https://zhongping.shinyapps.io/MC2map/), we find these relationship:
-
 ```{r}
 mapping <- read_csv("data/mapping.csv")
-
+plot_ly(data=mapping,
+          type = 'parcoords',
+          line = list(),
+          dimensions = list(
+            list(values = ~carid),
+            list(values = ~ccnum)
+               ))
 ```
+
 
 ## Infornal relationship between employees
 
@@ -571,6 +577,8 @@ g <- ggraph(net,layout = "nicely") +
   geom_node_text ( aes ( label = CarID ) )
 g + theme_graph()
 ```
+
+
 
 # Conclusion:
 
