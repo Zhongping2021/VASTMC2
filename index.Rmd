@@ -467,7 +467,7 @@ So, in order to find out the exact location of each car at specific datetime. We
 
 Here is the [link  ](https://zhongping.shinyapps.io/MC2map/) to R shiny app.
 
-![](data/shiny.gif)
+![](data/Rshiny.gif)
 
 After checking track each day, we find that the gps system of these 2 car seems broken. For car 9, the gps data have a lot missing leading the noncontinuous track. For car 28, the gps data have a lot bias leading the track unstable.
 

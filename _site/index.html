@@ -2712,7 +2712,7 @@ Geodetic CRS:  WGS 84</code></pre>
 </div>
 <p>Yet its hard to tell why the abnormal track happend. So, in order to find out the exact location of each car at specific datetime. We define a Rshiny app which can choose cardid, date, and hour range, to generate the dots on map.</p>
 <p>Here is the <a href="https://zhongping.shinyapps.io/MC2map/">link</a> to R shiny app.</p>
-<p><img src="data/shiny.gif" /></p>
+<p><img src="data/Rshiny.gif" /></p>
 <p>After checking track each day, we find that the gps system of these 2 car seems broken. For car 9, the gps data have a lot missing leading the noncontinuous track. For car 28, the gps data have a lot bias leading the track unstable.</p>
 <h2 id="which-ccnumber-link-to-which-loyaltynumber">Which ccnumber link to which loyaltynumber</h2>
 <p>From the experice, we can infer that if one employee consume at a shop and use his loyalty card for credit, then the transaction record in both card should share the same location, time and price. With this hypothesis, we can find the relationship between ccdata and loyaltydata.</p>
